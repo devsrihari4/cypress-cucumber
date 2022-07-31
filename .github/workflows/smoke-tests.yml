@@ -1,0 +1,23 @@
+name: Run tests
+on:
+  workflow_dispatch:
+jobs:
+  cypress-test:
+    name: Run on Chrome 83
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        # the actual items in the array do not matter,
+        # just the number - to force CI to sping 3 copies
+        # of the current job in parallel
+        machines: [1, 2, 3]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install Cypress
+        run: npm install
+      - name: Run Cypress tests
+        env:
+          # pass the Dashboard record key as an environment variable
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        run: npx cypress run --record --parallel --group smoke-tests --env configFile=test --spec 'cypress/integration/**/*.feature'
