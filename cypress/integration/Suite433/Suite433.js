@@ -1,8 +1,8 @@
 import { Given, When, Then, And } from "@badeball/cypress-cucumber-preprocessor"
 
-Given('I on the login page', () => {
-  cy.get('.globalNav__actions__login').click()
-})
+// Given('I on the login page', () => {
+//   cy.get('.globalNav__actions__login').click()
+// })
 
 When('I enter incorrect credentials', () => {
   cy.get('#username').should('be.visible').type('hello@test.com')

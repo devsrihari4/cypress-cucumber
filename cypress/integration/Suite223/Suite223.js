@@ -1,8 +1,8 @@
 import { Given, When, Then, And } from "@badeball/cypress-cucumber-preprocessor"
 
-When('I select Sign Up button', () => {
-  cy.get('[aria-label="Sign Up"]').invoke('removeAttr', 'target').click({force:true})
-})
+// When('I select Sign Up button', () => {
+//   cy.get('[aria-label="Sign Up"]').invoke('removeAttr', 'target').click({force:true})
+// })
 
 Then('I see different Sign Up options', () => {
   cy.get('[data-plan="premium"]').should('be.visible')
