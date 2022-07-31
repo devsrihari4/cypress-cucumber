@@ -1,0 +1,30 @@
+{
+  "name": "cypress-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:run:record": "cypress run --spec 'cypress/integration/**/*.feature'",
+    "cy:open": "cypress open --env configFile=test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devsrihari4/Cypress-Demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/devsrihari4/Cypress-Demo/issues"
+  },
+  "homepage": "https://github.com/devsrihari4/Cypress-Demo#readme",
+  "devDependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^12.0.0",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.3",
+    "@esbuild-plugins/node-modules-polyfill": "^0.1.4",
+    "cypress": "^10.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/integration/**/*.{js,ts}"
+  }
+}
